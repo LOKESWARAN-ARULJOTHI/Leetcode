@@ -21,10 +21,10 @@ class Solution:
         
         move = count - k
         
-        lastNode = None
-        for _ in range(move):
-            lastNode = head
-            head=head.next
+        lastNode = head
+        for _ in range(move-1):
+            lastNode = lastNode.next
+        head = lastNode.next
         lastNode.next = None
         return head
       
